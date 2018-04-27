@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleof.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="form-group">
+            <form action="#" th:action="@{/admin/locations/}" th:object="${location}" method="post">
+                <label th:for="city">City</label>
+                <input type="text" id="city" name="city" th:field="*{city}"
+                       class="form-control" placeholder="Қаланы еңгізіңіз"/><br/>
+                <span th:errors="*{city}" class="text-danger"></span><br/>
+                <label th:for="region">Region</label>
+                <input type="text" id="region" name="region" th:field="*{region}"
+                       class="form-control" placeholder="Районды еңгізіңіз"/><br/>
+                <span th:errors="*{region}" class="text-danger"></span><br/>
+                <button type="submit" class="btn btn-primary">Сақтау</button>
+
+            </form>
+
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
