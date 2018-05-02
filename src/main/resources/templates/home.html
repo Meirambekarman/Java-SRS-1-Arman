@@ -2,30 +2,58 @@
 <html lang="en" xmlns:th="http://www.thymeleof.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Образовательный центр Mixed_GROUP</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
+<div class="jumbotron text-center">
+    <h1>Қош келдіңіздер біздің оқу орнымызға</h1>
+    <p>Бұл оқу орын ең үлкен және атақты оқу орындардың бірі болып есептеледі</p>
 
+</div>
 <div class="container">
     <div class="panel-group" style="margin-top:40px">
         <div class="panel panel-primary">
             <div class="panel-heading">
                 <span th:utext="${userName}"></span>
             </div>
-            <div class="col-lg-8 col-md-7 col-sm-6">
-                <a href="/admin/students">Перейти на страницу students</a>
+            <div class="row">
+                <div class="col-sm-6">
+                    <h3>
+                        <a href="/admin/students">Перейти на страницу students
+                            <img src="https://www.kp.ru/afisha/wp-content/uploads/2018/01/%D1%81%D1%82%D1%83%D0%B4%D0%B5%D0%BD%D1%82.jpg"
+                                 width="500" height="300">
+                        </a>
+                    </h3>
+                </div>
+                <div class="col-sm-6">
+                    <h3>
+                        <a href="/admin/locations">Перейти на страницу locations
+                            <img src="http://www.vladtime.ru/uploads/posts/2016-10/1477284312_uchiteley-priglasili-na-ekskursii-s-sayta-new.stihi.ru.jpg"
+                                 width="500" height="300">
+                        </a>
+                    </h3>
+                </div>
+                <div>
+                    <h3>
+                        <a href="https://vk.com/id445522062"/>
+                        <button class="btn btn-md btn-primary btn-block" name="vk.com" type="Submit">А так же у нас есть Vkontakte</button>
+                    </h3>
+                </div>
+                <div>
+                    <h3>
+                        <a href="https://www.instagram.com/meirambeka229/?hl=ru"/>
+                        <button class="btn btn-md btn-success btn-block" name="instagram.com" type="Submit">А так же у нас есть Инстаграм</button>
+                    </h3>
+                </div>
+                <p class="admin-message-text text-center" th:utext="${adminMessage}"></p>
             </div>
-            <div class="col-lg-8 col-md-7 col-sm-6">
-                <a href="/admin/locations">Перейти на страницу locations</a>
-            </div>
-            <p class="admin-message-text text-center" th:utext="${adminMessage}"></p>
         </div>
+        <form th:action="@{/logout}" method="get">
+            <button class="btn btn-md btn-danger btn-block" name="registration"
+                    type="Submit">Выйти</button>
+        </form>
     </div>
-    <form th:action="@{/logout}" method="get">
-        <button class="btn btn-md btn-danger btn-block" name="registration"
-                type="Submit">Выйти</button>
-    </form>
 </div>
 </body>
 </html>
