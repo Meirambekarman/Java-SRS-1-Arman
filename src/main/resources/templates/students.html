@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleof.org">
+<html lang="en" xmlns:th="http://www.thymeleof.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <title>Students database</title>
     <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8">
@@ -8,7 +9,7 @@
 <body>
 <div class="container">
     <div class="page-header" id="banner"></div>
-    <div class="row">
+    <div class="row"  sec:authorize="hasAnyAuthority('USER','ADMIN')">
         <div class="col-lg-8 col-md-7 col-sm-6">
             <h1>Students</h1>
 
@@ -27,7 +28,7 @@
                             <span th:text="${location.city}"/><th:block th:if="${!iterStat.last}">,</th:block>
                         </span>
                     </td>
-                    <td>
+                    <td sec:authorize="hasAuthority('ADMIN')">
                         <a th:href="@{/student/{id}(id=${student.id})}">view</a>
                     </td>
                 </tr>
@@ -35,7 +36,7 @@
             </table>
         </div>
     </div>
-    <div class="row">
+    <div class="row" sec:authorize="hasAuthority('ADMIN')">
         <div class="col-lg-8 col-md-7 col-sm-6">
             <h1>Add a student</h1>
 
